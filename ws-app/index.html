@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OxySound</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #swagger-ui {
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+    #fake-endpoints {
+      margin-top: 20px;
+    }
+    #fake-endpoints .endpoint {
+      margin-bottom: 20px;
+    }
+    #logo-bar {
+      background-color: #e9ecef; /* Light grey background color */
+      padding: 10px;
+      text-align: center;
+    }
+    #logo-bar img {
+      max-width: 50%;
+      height: 50%;
+    }
+
+    /* Updated logo bar */
+    .navbar-brand img {
+      max-width: 160px;
+      height: auto;
+      margin-right: 5px;
+    }
+
+    #connection-status {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .connected {
+      color: green;
+    }
+
+    .disconnected {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="3.png" width="160" height="60" class="d-inline-block align-top" alt="">
+    </a>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="form-group">
+      <label for="measurementType">Type:</label>
+      <select class="form-control" id="measurementType">
+        <option value="ultrasonic">Ultrasonic</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="messageInput">Payload:</label>
+      <input type="text" class="form-control" id="messageInput" placeholder="Test message">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" id="sendButton">Send</button>
+      <button class="btn btn-danger" id="stopButton">Stop</button>
+    </div>
+
+    <div id="connection-status" class="disconnected">WebSocket is disconnected</div>
+  </div>
+
+  <script src="app.js"></script>
+
+  <!-- Include Bootstrap JS and Popper.js (required for Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
